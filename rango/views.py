@@ -52,7 +52,6 @@ def add_category(request):
 
         if form.is_valid():
             cat = form.save(commit=True)
-            print("YOUR MUM")
             return redirect('/rango/')
         
         else:
@@ -66,7 +65,6 @@ def add_page(request, category_name_slug):
         category = Category.objects.get(slug=category_name_slug)
     except Category.DoesNotExist:
         category = None
-        print("BALLS")
 
     if category is None:
         return redirect('/rango/')

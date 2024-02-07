@@ -11,7 +11,6 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
-        print("I AM SAVING THE CATEGORY " + self.slug)
         super(Category, self).save(*args, **kwargs)
 
     class Meta:
